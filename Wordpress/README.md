@@ -1,4 +1,4 @@
-# WordPress Notes (Learning)
+# WordPress Notes
 
 ## Environments and architecture
 
