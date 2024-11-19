@@ -1,0 +1,136 @@
+{
+    "version": 2,
+    "settings": {
+        "layout": {
+            "contentSize": "100%",
+            "wideSize": "100%"
+        },
+        "color": {
+            "palette": [
+                {
+                    "name": "Primary Highlight",
+                    "slug": "primary-highlight",
+                    "color": "#E8A690"
+                },
+                {
+                    "name": "Secondary Highlight",
+                    "slug": "secondary-highlight",
+                    "color": "#AA8FBA"
+                },
+                {
+                    "name": "Light",
+                    "slug": "light",
+                    "color": "#F2F2F2"
+                },
+                {
+                    "name": "Dark",
+                    "slug": "dark",
+                    "color": "#000000"
+                }
+            ]
+        },
+        "typography": {
+			"fontFamilies": [
+				{
+					"fontFamily": "Lato, sans-serif",
+					"slug": "body",
+					"name": "Lato"
+				}
+			],	
+			"fontSizes": [
+                {
+                    "slug": "extra-small",
+                    "size": "1rem",
+                    "name": "Extra small"
+                },
+                {
+                    "slug": "small",
+                    "size": "1.5rem",
+                    "name": "Small"
+                },
+                {
+                    "slug": "medium",
+                    "size": "2rem",
+                    "name": "Medium"
+                },
+                {
+                    "slug": "large",
+                    "size": "4rem",
+                    "name": "Large"
+                }
+		    ]
+        },
+        "spacing": {
+			"padding": true,
+			"margin": true,
+			"units": [ "px", "em", "rem", "vh", "vw", "%" ]
+		},
+        "dimensions": {
+			"minHeight": true
+		},
+        "position": {
+			"sticky": true
+		}
+    },
+    "styles": {
+        "color": {
+            "background": "#F2F2F2",
+            "text": "#000000"
+        },
+        "typography": {
+            "fontFamily": "var:preset|font-family|body",
+            "fontSize": "var:preset|font-size|small"
+        },
+        "spacing": {
+			"padding": {
+				"top": "0",
+				"bottom": "0",
+				"left": "2rem",
+				"right": "2rem"
+			}
+		},
+        "elements": {
+            "h1": {
+                "typography": {
+                    "fontSize": "var:preset|font-size|large"
+                }
+            },
+            "h2": {
+                "typography": {
+                    "fontSize": "var:preset|font-size|medium"
+                }
+            },
+            "button": {
+                "color": {
+                    "background": "var:preset|color|dark",
+                    "text": "var:preset|color|light"
+                },
+                "typography": {
+                    "fontSize": "var:preset|font-size|medium"
+                }
+            },
+            "link": {
+                "typography": {
+                    "fontSize": "var:preset|font-size|extra-small"
+                }
+            }
+        }
+    },
+    "templateParts": [
+        {
+            "name": "header",
+            "title": "Header"
+        },
+        {
+            "name": "footer",
+            "title": "Footer"
+        }
+    ],
+    "customTemplates": [
+        {
+			"name": "landing-page",
+			"postTypes": ["page"],
+			"title": "Landing Page"
+		}
+    ]
+}

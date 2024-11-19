@@ -1,0 +1,21 @@
+{
+    "name": "excellenceblocktheme/heading",
+    "title": "Excellence Heading",
+    "category": "common",
+    "icon": "smiley",
+    "textdomain": "excellence",
+    "attributes": {
+        "headingText": {
+			"type": "string",
+			"default": ""
+		},
+        "size": {
+			"type": "string",
+			"default": "primary"
+		}
+    },
+    "editorScript": "file:../../build/custom-blocks.js",
+    "editorStyle": "file:../../build/index.css",
+    "viewScript": "file:../../build/custom-blocks.js",
+    "style": [ "file:../../build/index.css", "file:../../build/style-index.css"]
+}

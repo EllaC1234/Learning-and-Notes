@@ -1,0 +1,27 @@
+{
+    "name": "excellenceblocktheme/button",
+    "title": "Excellence Button",
+    "category": "common",
+    "icon": "smiley",
+    "textdomain": "excellence",
+    "attributes": {
+        "text": {
+			"type": "string",
+			"default": ""
+		},
+        "linkObject": {
+			"type": "object",
+            "default": {}
+		},
+        "buttonColor":{
+            "type": "string"
+        },
+        "textColor":{
+            "type": "string"
+        }
+    },
+    "editorScript": "file:../../build/custom-blocks.js",
+    "editorStyle": "file:../../build/index.css",
+    "viewScript": "file:../../build/custom-blocks.js",
+    "style": [ "file:../../build/index.css", "file:../../build/style-index.css"]
+}

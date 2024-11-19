@@ -1,0 +1,19 @@
+{
+    "name": "excellenceblocktheme/banner",
+    "title": "Excellence Banner",
+    "category": "common",
+    "icon": "megaphone",
+    "textdomain": "excellence",
+    "attributes": {
+        "imageID":{
+            "type": "number"
+        },
+        "imageURL":{
+            "type": "string"
+        }
+    },
+    "editorScript": "file:../../build/custom-blocks.js",
+    "editorStyle": "file:../../build/index.css",
+    "viewScript": "file:../../build/custom-blocks.js",
+    "style": [ "file:../../build/index.css", "file:../../build/style-index.css"]
+}
