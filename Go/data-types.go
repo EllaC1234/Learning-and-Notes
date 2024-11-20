@@ -1,3 +1,7 @@
+// Statically typed language
+// Primitive types are not objects.
+// Primitive types are immutable, but complex are mutable.
+
 package main
 
 import (
