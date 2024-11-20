@@ -1,4 +1,4 @@
-package main 
+package main
 
 import (
 	"fmt"
@@ -13,14 +13,14 @@ type Vertex struct {
 
 // Struct literals
 var (
-	v1 = Vertex{1, 2}  // has type Vertex
-	v2 = Vertex{X: 1}  // Y:0 is implicit
+	v1 = Vertex{1, 2} // has type Vertex
+	v2 = Vertex{X: 1} // Y:0 is implicit
 )
 
-func main() {
+func typesExample() {
 	// Pointers (variables that store the memory address of another variable)
 	i := 42
-	p := &i // Gets the memory address of i and assigns it to p
+	p := &i         // Gets the memory address of i and assigns it to p
 	fmt.Println(*p) // Accesses the value stored at the memory address
 
 	// Arrays
@@ -35,22 +35,23 @@ func main() {
 	// Not a fixed size. Does not store any data, but just references part of the array.
 	var s []string = a[1:2]
 	fmt.Println(s)
-	fmt.Println(cap(s)) // Slice capacity (length of original array) vs len(s)
-	s = append(s, 2, 3, 4) // Slices can be appended to within their cap. If the length exceeds the cap, a new array will be created and pointed to
+	fmt.Println(cap(s))          // Slice capacity (length of original array) vs len(s)
+	s = append(s, "2", "3", "4") // Slices can be appended to within their cap. If the length exceeds the cap, a new array will be created and pointed to
 
 	// Dynamically-sized arrays are just slices
 	b := make([]int, 0, 5) // slice, len, cap (optional)
+	fmt.Println(b)
 
 	// Looping over a slice or map with range
 	// Range returns an index and a copy of the item at that index. Either can be omitted.
 	var pow = []int{1, 2, 4, 8, 16, 32, 64, 128}
-	for i, v := range pow { 
+	for i, v := range pow {
 		fmt.Printf("2**%d = %d\n", i, v)
 	}
 
 	// Maps
-	var ages map[string]int // Declares variable
-	ages = make(map[string]Vertex) // Initializes
+	var ages map[string]int     // Declares variable
+	ages = make(map[string]int) // Initializes
 	ages["Steve"] = 78
 	fmt.Println(ages["Steve"])
 

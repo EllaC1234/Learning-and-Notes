@@ -8,7 +8,7 @@ import (
 )
 
 // Loops are just for loops in Go
-func main() {
+func flowExamples() {
 
 	// Traditional for loop
 	// Has the start, stop and conditional values
