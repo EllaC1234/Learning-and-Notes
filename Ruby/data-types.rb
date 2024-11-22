@@ -12,3 +12,11 @@ a = 'HI'
 b = a # Points to original address
 a = 'xxx' # Creates new value, and therefore new address
 puts b # Outputs 'HI'
+
+# Arrays
+# When creating an array, you can use the following syntax to specify length etc before assigning items
+arr = Array.new(5, [])
+# When creating a 2d array, the subarrays are actually references to subarrays and they initially all reference the same array. This means that changing arr[4] will change all the items. The following creates new references.
+arr = Array.new(10) { Array.new(10) }
+# Or...
+arr = [[1], [1,2]]
