@@ -26,6 +26,7 @@ arr = [[1], [1,2]]
 
 # Symbols
 # Symbols are similar to strings, but are immutable, and therefore more memory efficient.
+# They are unique and are often used to identify methods, variables and keys.
 status = :classified
 
 # Hashes
