@@ -26,7 +26,6 @@ print(p2.teamMembers)
 
 
 # Class, instance and static methods
-# Methods are the functions found in classes, and they must always be passed in 'self'
 class Employee:
     def __init__(self, ID=None, salary=None, department=None):
         self.ID = ID
@@ -86,7 +85,7 @@ print(Steve._Employee__salary)  # the _<ClassName> prefix is used to access priv
 
 # Data hiding/Abstraction - hiding all but relevant data
 # Creating an interface for objects to communicate by so that they cannot see each other's inner workings.
-# Encapsulation - binding data and methods into a single unit (a class). Most attribute are private,
+# Encapsulation - binding data and methods into a single unit (a class). Most attributes are private,
 # but some public methods are used to access these (often getters and setters). This protects data and 
 # makes debugging easier.
 class User:
