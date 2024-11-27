@@ -68,7 +68,7 @@ class MyClass:
     # Static methods have no direct relation to instance or class variables. They cannot be modified by inheriting
     # objects or classes. They know nothing about the current state.
     @staticmethod
-    def demo()
+    def demo():
         print("I am a static method")
 
 # Double underscore is used to create a private attribute, which can only be accessed from within the class.
