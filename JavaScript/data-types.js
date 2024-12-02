@@ -1,6 +1,8 @@
 // Dynamically typed language.
 // All non-primitive data types are made of objects.
-// Primitive types are immutable, objects are mutable. Strings are considered primitive.
+// Primitive types are immutable (value), objects are mutable (reference). Strings are considered primitive.
+
+// Note: started off as an interpreted language, but now uses JIT compilation
 
 // Type conversion
 // Implicit
