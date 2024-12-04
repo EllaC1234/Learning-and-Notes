@@ -1,72 +1,84 @@
-// Objects, object literals and prototypes are all objects.
+// Prototypes
+// Prototypes are objects that other objects inherit from. Very similar to object inheritance or an interface in other languages.
 
-// Prototypes and classes
-// A prototype is a simple object that other objects inherit from. Classes define prototypes, and the
-// prototype is a blueprint (a generic object) for an instance (a more specific object). 
-
-// Object
-// Is initiated using a constructor. Inherits all properties of its class. They allow you to have both 
-// public and private properties. The 'this' keyword is used to refer to the object instance. In older code,
-// a function is used to create a "class" rather than a specialised "class" element.
-// Any properties added to a constructor are static, and they cannot be accessed via the instance, only the
-// class, unless the prototype is used.
-
-class Animal {
-    constructor(species, breed, age, colour, sound_type) { 
-        this.species = species;
-        this.breed = breed;
-        this.age = age;
-        this.colour = colour;
-        this.sound_type = sound_type;
-    }
-
-    sound() {
-        switch(this.species) {
-            case "dog":
-                console.log("woof");
-            case "lion":
-                console.log("roar");
-            case "cat":
-                console.log("meow");
-            case "bird":
-                console.log("squark");
-        }
-    }
-}
-
-const dog = new Animal("dog", "stafiture", 6, "blue", "bark");
-dog.sound();
-
-// This is the same functionality in a function constructor:
-function Person(first, last, age, eyecolor) {
-    this.firstName = first;
-    this.lastName = last;
+// Constructor functions create prototypes
+function Person(name, age) {
+    this.name = name;
     this.age = age;
-    this.eyeColor = eyecolor;
-  }
-  
-const myFather = new Person("John", "Doe", 50, "blue");
-const myMother = new Person("Sally", "Rally", 48, "green");
+}
 
+// You can then edit the prototype (in this case Person.prototype) and give it methods etc
+Person.prototype.greet = function() {
+    console.log("Hello, my name is " + this.name);   
+};
 
-// Object literal 
-// Object literal properties are all public by default. They don't have a class, constructor or prototype,
-// so they must be completely copied every time another "instance" is created. It is a singleton - the only
-// instance created. The 'this' keyword refers to the object in general.
-const max = {
-    species: "dog",
-    breed: "stafiture",
-    age: 6,
-    colour: "blue",
-    sound: function() {
-        console.log("bark");
+const person1 = new Person("Alice", 30);
+person1.greet();
+// You cannot assign new properties to the prototype, but you can to an instance
+person1.gender = "female";
+console.log(person1.gender);
+
+// Inheriting from Person
+function Student(name, age, id, subject) {
+    Person.call(this, name, age); // calls Person constructor function
+    let _id = id // private, only accessible in the constructor function
+    this.subject = subject;
+}
+
+Student.prototype = Object.create(Person.prototype); // Sets Student prototype to Person prototype
+Student.prototype.constructor = Student; // Reassigns Student constructor function to call the correct one
+
+// Classes
+// Syntactical sugar for a prototype to mimic other languages
+class Person2 { // Equivalent to prototype
+    // Static methods belong to the class, not to each instance. Use for utility and helper functions.
+    static capitalizeName(name){
+        return name.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+    }
+
+    // Equivalent to constructor function
+    constructor(name, age) {
+        this.name = Person2.capitalizeName(name);
+        this.age = age;
+    }
+
+    greet() {
+        console.log(`Hello, my name is ${this.name}`);
     }
 }
 
-max.sound();
+const person2 = new Person2("alice", 30);
+person2.greet(); 
 
-// Properties can be added to object literals.
-max.gender = "male";
+class Student2 extends Person2 {
+    #id; 
 
-// Deep cloning - a complete copy of the object and all of its levels (parents, children, etc)
-// Shallow cloning - copying the "flat", one-level object
+    constructor(name, age, id, subject) {
+        super(name, age);
+        this.#id = id; // private
+        this.subject = subject
+    }
+}
+
+// Object literals
+// Object literals inherit directly from Object.prototype, and they are singletons. Everytime they are created, they have to be copied completely. 
+const person = {
+    name: "Joe",
+    age: 90,
+    greet: function() {
+        console.log(`Hello, my name is ${this.name}`);
+    }
+}
+
+person.greet();
+
+const student = {
+    id: 93847,
+    __proto__: person // inheriting from person
+}
+
+// Deep cloning
+// A complete copy of the object and all of its levels (parents, children, etc)
+
+// Shallow cloning
+// Copying the "flat", one-level object
