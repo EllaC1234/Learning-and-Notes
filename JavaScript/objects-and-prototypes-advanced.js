@@ -21,7 +21,7 @@ console.log(person1.gender);
 // Inheriting from Person
 function Student(name, age, id, subject) {
     Person.call(this, name, age); // calls Person constructor function
-    let _id = id // private, only accessible in the constructor function
+    let _id = id // private, only accessible in the constructor function (naming convention)
     this.subject = subject;
 }
 

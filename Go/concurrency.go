@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-// Concurrency is executing multiple tasks independently and simultaneously (different to parallelism, which runs commands at the same time on multiple CPUs)
+// Concurrency is executing multiple tasks independently and "simultaneously" on a singe CPU (different to parallelism, which runs commands at the same time on multiple CPUs)
 // Go routines are lightweight threads and handle a concurrent task
 // Channels communicate between routines
 
